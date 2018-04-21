@@ -34,5 +34,7 @@ http://cs52.me/assignments/lab/react-notes/
 * App: for wrapping everything
   * AddNote: a text input for adding a new note
   * Note: the note itself
+    * title, text, x, y, zIndex    
+
     * NoteHeader: contains title, delete button, edit button, drag button
     * NoteContent: contains the text and image content of the note
