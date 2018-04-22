@@ -1,16 +1,21 @@
 import React from 'react';
 
 const Note = (props) => {
-  // const title =
-  // const content =
-  // const x =
-  // const y =
-
+  // const imgUrl = props.video.snippet.thumbnails.default.url;
+  console.log('note props', props.note);
+  const { // object destructuring
+    id, title, content, x, y, zIndex,
+  } = props.note;
 
   return (
-    <div id="note">
-      <div className="note-content">{props.video.snippet.title}</div>
-    </div>
+    <li id="note">
+      <div>{id}</div>
+      <div className="title">{title}</div>
+      <div className="content">{content}</div>
+      <div>{x}</div>
+      <div>{y}</div>
+      <div>{zIndex}</div>
+    </li>
   );
 };
 
