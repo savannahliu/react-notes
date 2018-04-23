@@ -37,7 +37,7 @@ class App extends Component {
         <MuiThemeProvider>
           <AddNote newTitle={this.state.newTitle} />
         </MuiThemeProvider>
-        <NotesContainer notes={this.state.notes} />
+        <NotesContainer onDeleteClick={id => this.setState({ notes: this.state.notes.delete(id) })} notes={this.state.notes} />
       </div>
     );
   }

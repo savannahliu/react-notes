@@ -2,9 +2,13 @@ import React, { Component } from 'react';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import TextField from 'material-ui/TextField';
+import { pink50 } from 'material-ui/styles/colors';
 
 const style = {
   marginRight: 20,
+  underlineStyle: {
+    borderColor: pink50,
+  },
 };
 
 // text input for creating a new note
@@ -24,8 +28,8 @@ class AddNote extends Component {
   render() {
     return (
       <div id="add-note">
-        <TextField hintText="note title" onChange={this.onInputChange} value={this.state.newTitle} />
-        <FloatingActionButton mini disabled style={style}>
+        <TextField hintText="note title" onChange={this.onInputChange} value={this.state.newTitle} underlineStyle={style.underlineStyle} />
+        <FloatingActionButton mini secondary style={style}>
           <ContentAdd />
         </FloatingActionButton>
       </div>

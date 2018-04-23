@@ -7,9 +7,9 @@ const NotesContainer = (props) => {
   });
 
   return (
-    <ul>
+    <div>
       {noteItems}
-    </ul>
+    </div>
   );
 };
 
