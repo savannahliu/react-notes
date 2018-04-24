@@ -52,6 +52,7 @@
     "npm": "^5.8.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-draggable": "^3.0.5",
     "react-router": "^4.2.0"
   }
 }
