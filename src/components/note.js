@@ -9,8 +9,13 @@ class Note extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: this.props.note.id, title: this.props.note.title, content: this.props.note.content,
-      // id: this.props.note.id, title: this.props.note.title, content: this.props.note.content, x: this.props.note.x, y: this.props.note.y, zIndex: this.props.note.zIndex,
+      // id: this.props.note.id, title: this.props.note.title, content: this.props.note.content,
+      id: this.props.note.id,
+      title: this.props.note.title,
+      content: this.props.note.content,
+      // x: this.props.note.x,
+      // y: this.props.note.y,
+      // zIndex: this.props.note.zIndex,
     };
     // this.onDrag = this.onDrag.bind(this);
     this.onDeleteClick = props.onDeleteClick;
@@ -18,7 +23,8 @@ class Note extends Component {
 
   // onDrag() {
   //   console.log('onstartdrag', this.state.x, this.state.y, this.state.zIndex);
-  //   // this.setState({ newTitle: event.target.value });
+  //   this.setState({ x: this.ui.x, y: this.ui.y });
+  //   console.log('ui x y', this.ui.x, this.ui.y);
   // }
 
   // edit function
