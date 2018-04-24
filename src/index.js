@@ -7,7 +7,7 @@ import NotesContainer from './components/notes_container';
 import './style.scss';
 
 // note object
-class Note {
+class NoteObj {
   constructor(id, title, content, x, y, zIndex) {
     this.id = id;
     this.title = title;
@@ -21,14 +21,14 @@ class Note {
 class App extends Component {
   constructor(props) {
     super(props);
-    const newNote = new Note(1, 'intro', 'hello', 10, 10, 1);
+    const newNote = new NoteObj(1, 'intro', 'hello', 10, 10, 1);
     this.state = {
       notes: Immutable.Map([[1, newNote]]),
       newTitle: 'intro',
     };
-    console.log('initial state');
-    console.log(this.state.newTitle);
-    console.log(this.state.notes);
+    // console.log('initial state');
+    // console.log(this.state.newTitle);
+    // console.log(this.state.notes);
   }
 
   render() {
@@ -37,7 +37,7 @@ class App extends Component {
         <MuiThemeProvider>
           <AddNote newTitle={this.state.newTitle} />
         </MuiThemeProvider>
-        <NotesContainer onDeleteClick={id => this.setState({ notes: this.state.notes.delete(id) })} notes={this.state.notes} />
+        <NotesContainer notes={this.state.notes} onDeleteClick={id => this.setState({ notes: this.state.notes.delete(id) })} />
       </div>
     );
   }
