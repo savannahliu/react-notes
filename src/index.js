@@ -39,7 +39,9 @@ class App extends Component {
         </MuiThemeProvider>
         <NotesContainer notes={this.state.notes}
           onDeleteClick={id => this.setState({ notes: this.state.notes.delete(id) })}
-          updateNote={(id, note) => this.setState({ notes: this.state.notes.set(id, note) })}
+          updateNote={(id, note) => this.setState({
+            notes: this.state.notes.update(id, (n) => { return Object.assign({}, n); }),
+          })}
         />
       </div>
     );

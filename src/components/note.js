@@ -53,21 +53,14 @@ class Note extends Component {
 
   onChangeContent(event) {
     this.setState({ content: event.target.value });
-    const n = this.createNote();
-    this.props.updateNote(this.state.currentId, n);
+    const n = new NoteObject(this.state.id, this.state.newTitle, '', this.state.x, this.state.y, this.state.zIndex);
+    this.props.updateNote(this.state.id, n);
   }
 
   onChangeTitle(event) {
     this.setState({ title: event.target.value });
-    const n = this.createNote();
-    this.props.updateNote(this.state.currentId, n);
-  }
-
-  createNote() {
-    // create a new note object
-    const newNote = new NoteObject(this.state.currentId, this.state.newTitle, '', this.state.x, this.state.y, this.state.zIndex);
-    // now add it to the map of note
-    return newNote;
+    const n = new NoteObject(this.state.id, this.state.newTitle, '', this.state.x, this.state.y, this.state.zIndex);
+    this.props.updateNote(this.state.id, n);
   }
 
   // edit function
