@@ -44,6 +44,7 @@
     "@fortawesome/fontawesome-free-solid": "^5.0.10",
     "@fortawesome/react-fontawesome": "^0.0.18",
     "axios": "^0.18.0",
+    "firebase": "^4.13.1",
     "font-awesome": "^4.7.0",
     "immutable": "^3.8.2",
     "jquery": "^3.3.1",

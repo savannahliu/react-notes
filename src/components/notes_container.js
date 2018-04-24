@@ -3,7 +3,7 @@ import Note from './note';
 
 const NotesContainer = (props) => {
   const noteItems = props.notes.entrySeq().map(([id, note]) => {
-    return <Note onDeleteClick={props.onDeleteClick} key={note.id} note={note} />;
+    return <Note onDeleteClick={props.onDeleteClick} updateNote={props.updateNote} key={note.id} note={note} />;
   });
 
   return (

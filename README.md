@@ -20,7 +20,7 @@ http://cs52.me/assignments/lab/react-notes/
     * display with some formatting
 * Persists all changes to Firebase in realtime
 * Updates based on Firebase events
-* is at least as stylish as these mockups
+* is at least as stylish as mockups
 
 ### A Note:
 * displays title
@@ -35,6 +35,4 @@ http://cs52.me/assignments/lab/react-notes/
   * AddNote: a text input for adding a new note
   * Note: the note itself
     * title, text, x, y, zIndex    
-
-    * NoteHeader: contains title, delete button, edit button, drag button
-    * NoteContent: contains the text and image content of the note
+  * NoteContainer: holds all the notes

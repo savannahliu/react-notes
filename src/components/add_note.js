@@ -32,7 +32,6 @@ class AddNote extends Component {
     // now add it to the map of notes
     this.props.onAddClick(this.state.currentId, newNote);
     this.setState({ currentId: this.state.currentId + 1 }); // update id
-    // this.setState({ newTitle: this.state.currentId + 1 });// clear the input field bc user has made the note
   }
 
   render() {

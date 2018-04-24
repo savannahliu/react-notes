@@ -6,6 +6,8 @@ import AddNote from './components/add_note';
 import NotesContainer from './components/notes_container';
 import './style.scss';
 import NoteObject from './NoteObject';
+// import * as db from './services/datastore';
+// to get db.fetchNotes etc...
 
 // // note object
 // class NoteObj {
@@ -38,9 +40,14 @@ class App extends Component {
     return (
       <div>
         <MuiThemeProvider>
-          <AddNote newTitle={this.state.newTitle} onAddClick={(id, note) => this.setState({ notes: this.state.notes.set(id, note) })} />
+          <AddNote newTitle={this.state.newTitle}
+            onAddClick={(id, note) => this.setState({ notes: this.state.notes.set(id, note) })}
+          />
         </MuiThemeProvider>
-        <NotesContainer notes={this.state.notes} onDeleteClick={id => this.setState({ notes: this.state.notes.delete(id) })} />
+        <NotesContainer notes={this.state.notes}
+          onDeleteClick={id => this.setState({ notes: this.state.notes.delete(id) })}
+          updateNote={(id, note) => this.setState({ notes: this.state.notes.set(id, note) })}
+        />
       </div>
     );
   }

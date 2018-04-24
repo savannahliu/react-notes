@@ -8,7 +8,7 @@ import marked from 'marked'; // markdown support
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'; // pretty ui from material design
 import TextField from 'material-ui/TextField';
 import { pink400 } from 'material-ui/styles/colors';
-import Textarea from 'react-textarea-autosize'; // so we dont have to adjust size of note ourself
+import NoteObject from '../NoteObject';
 
 const style = {
   marginRight: 20,
@@ -53,10 +53,21 @@ class Note extends Component {
 
   onChangeContent(event) {
     this.setState({ content: event.target.value });
+    const n = this.createNote();
+    this.props.updateNote(this.state.currentId, n);
   }
 
   onChangeTitle(event) {
     this.setState({ title: event.target.value });
+    const n = this.createNote();
+    this.props.updateNote(this.state.currentId, n);
+  }
+
+  createNote() {
+    // create a new note object
+    const newNote = new NoteObject(this.state.currentId, this.state.newTitle, '', this.state.x, this.state.y, this.state.zIndex);
+    // now add it to the map of note
+    return newNote;
   }
 
   // edit function
