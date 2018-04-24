@@ -5,6 +5,16 @@ import faEdit from '@fortawesome/fontawesome-free-solid/faEdit';
 import faArrows from '@fortawesome/fontawesome-free-solid/faExpandArrowsAlt';
 import Draggable from 'react-draggable'; // The default
 import marked from 'marked';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import TextField from 'material-ui/TextField';
+import { lightBlue50 } from 'material-ui/styles/colors';
+
+const style = {
+  marginRight: 20,
+  underlineStyle: {
+    borderColor: lightBlue50,
+  },
+};
 
 class Note extends Component {
   constructor(props) {
@@ -22,6 +32,7 @@ class Note extends Component {
     // this.onDrag = this.onDrag.bind(this);
     this.onDeleteClick = props.onDeleteClick;
     this.onEditClick = this.onEditClick.bind(this);
+    this.onChangeContent = this.onChangeContent.bind(this);
   }
 
   // onDrag() {
@@ -38,6 +49,10 @@ class Note extends Component {
     }
   }
 
+  onChangeContent(event) {
+    this.setState({ content: event.target.value });
+  }
+
   // edit function
   renderNote() {
     if (this.state.isEditing) {
@@ -49,7 +64,9 @@ class Note extends Component {
             <div> <FontAwesomeIcon icon={faEdit} onClick={() => this.onEditClick()} /> </div>
             <div className="handle" id="drag"> <FontAwesomeIcon icon={faArrows} onClick={() => this.onDrag()} /> </div>
           </div>
-          <div className="content">editing!</div>
+          <MuiThemeProvider>
+            <TextField hintText="Edit notes!" onChange={this.onChangeContent} value={this.state.content} underlineStyle={style.underlineStyle} multiLine />
+          </MuiThemeProvider>
         </div>
       );
     } else {
