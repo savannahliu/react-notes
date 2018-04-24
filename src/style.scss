@@ -1,6 +1,10 @@
+$margin: 10px;
+$smallMargin: 3px;
+$padding: 10px;
+
 body, html {
   font-family: "Roboto", sans-serif;
-  background: linear-gradient(to bottom, pink 0%,#53cbf1 40%,#05abe0 100%);
+  background: linear-gradient(to bottom, pink 30%,#53cbf1 100%,#05abe0 30%);
   height: 100%;
 }
 
@@ -10,4 +14,33 @@ body, html {
   height: 200px;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+// note ---------------------
+
+.note {
+  width: 300px;
+  height: auto;
+  background-color: white;
+  margin : $margin;
+  padding: $padding;
+}
+
+.note-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.note-header div {
+  margin: $smallMargin;
+}
+
+.noteBody{
+  width: 100%;
+}
+
+// add note ------------------
+#add-note {
+  margin: $margin;
 }

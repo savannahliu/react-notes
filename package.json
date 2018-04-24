@@ -40,11 +40,22 @@
     "webpack-serve": "^0.3.1"
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.5",
+    "@fortawesome/fontawesome-free-solid": "^5.0.10",
+    "@fortawesome/react-fontawesome": "^0.0.18",
     "axios": "^0.18.0",
+    "firebase": "^4.13.1",
+    "font-awesome": "^4.7.0",
+    "immutable": "^3.8.2",
     "jquery": "^3.3.1",
     "lodash.debounce": "^4.0.8",
+    "marked": "^0.3.19",
+    "material-ui": "^0.20.0",
+    "npm": "^5.8.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-router": "^4.2.0"
+    "react-draggable": "^3.0.5",
+    "react-router": "^4.2.0",
+    "react-textarea-autosize": "^6.1.0"
   }
 }
