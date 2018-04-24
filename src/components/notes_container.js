@@ -3,7 +3,7 @@ import Note from './note';
 
 const NotesContainer = (props) => {
   const noteItems = props.notes.map((note) => {
-    return <Note key={note.id} note={note} />;
+    return <Note onDeleteClick={props.onDeleteClick} key={note.id} note={note} />;
   });
 
   return (
