@@ -5,11 +5,6 @@ import faEdit from '@fortawesome/fontawesome-free-solid/faEdit';
 import faArrows from '@fortawesome/fontawesome-free-solid/faExpandArrowsAlt';
 
 const Note = (props) => {
-  // const { // object destructuring
-  //   id, title, content, x, y, zIndex,
-  // } = props.note;
-  // console.log('id', id, 'note x', x, 'note y', y, 'note zIndex', zIndex);
-  // console.log(props.note.title);
   return (
     <div className="note">
       <div className="note-header">
