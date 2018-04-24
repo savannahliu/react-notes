@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'; // icons
 import faTrash from '@fortawesome/fontawesome-free-solid/faTrash';
 import faEdit from '@fortawesome/fontawesome-free-solid/faEdit';
 import faArrows from '@fortawesome/fontawesome-free-solid/faExpandArrowsAlt';
 import Draggable from 'react-draggable'; // The default
-import marked from 'marked';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import marked from 'marked'; // markdown support
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'; // pretty ui from material design
 import TextField from 'material-ui/TextField';
 import { pink400 } from 'material-ui/styles/colors';
+import Textarea from 'react-textarea-autosize'; // so we dont have to adjust size of note ourself
 
 const style = {
   marginRight: 20,
@@ -72,7 +73,7 @@ class Note extends Component {
             <div className="handle" id="drag"> <FontAwesomeIcon icon={faArrows} onClick={() => this.onDrag()} /> </div>
           </div>
           <MuiThemeProvider>
-            <TextField hintText="note content" onChange={this.onChangeContent} value={this.state.content} underlineStyle={style.underlineStyle} multiLine />
+            <TextField hintText="note content" onChange={this.onChangeContent} value={this.state.content} underlineStyle={style.underlineStyle} multiLine rows={3} />
           </MuiThemeProvider>
         </div>
       );

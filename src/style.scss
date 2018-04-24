@@ -20,7 +20,7 @@ body, html {
 
 .note {
   width: 300px;
-  height: 200px;
+  height: auto;
   background-color: white;
   margin : $margin;
   padding: $padding;
@@ -36,8 +36,8 @@ body, html {
   margin: $smallMargin;
 }
 
-#drag {
-// make it go to the very right
+.noteBody{
+  width: 100%;
 }
 
 // add note ------------------
