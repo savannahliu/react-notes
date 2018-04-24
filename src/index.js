@@ -7,34 +7,27 @@ import NotesContainer from './components/notes_container';
 import './style.scss';
 import NoteObject from './NoteObject';
 // import * as db from './services/datastore';
-// to get db.fetchNotes etc...
-
-// // note object
-// class NoteObj {
-//   constructor(id, title, content, x, y, zIndex) {
-//     this.id = id;
-//     this.title = title;
-//     this.content = content;
-//     this.x = x;
-//     this.y = y;
-//     this.zIndex = zIndex;
-//   }
-// }
 
 class App extends Component {
   constructor(props) {
     super(props);
     const newNote = new NoteObject(1, 'welcome!', 'Click the pen button when you start and finish editing', 10, 10, 1);
-    const newNote2 = new NoteObject(2, 'intro2', '# large ', 10, 10, 2);
+    // const newNote2 = new NoteObject(2, 'intro2', '# large ', 10, 10, 2);
     this.state = {
-      // notes: Immutable.Map([[1, newNote]]),
-      notes: Immutable.Map([[1, newNote], [2, newNote2]]),
+      notes: Immutable.Map([[1, newNote]]),
+      // notes: Immutable.Map([[1, newNote], [2, newNote2]]),
       newTitle: 'intro',
     };
     // console.log('initial state');
     // console.log(this.state.newTitle);
     // console.log(this.state.notes);
   }
+
+  // componentDidMount() {
+  //   firebasedb.fetchNotes((notes) => {
+  //     this.setState({ notes: Immutable.Map(notes) });
+  //   });
+  // }
 
   render() {
     return (
