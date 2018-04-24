@@ -7,12 +7,12 @@ import Draggable from 'react-draggable'; // The default
 import marked from 'marked';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import TextField from 'material-ui/TextField';
-import { lightBlue50 } from 'material-ui/styles/colors';
+import { pink400 } from 'material-ui/styles/colors';
 
 const style = {
   marginRight: 20,
   underlineStyle: {
-    borderColor: lightBlue50,
+    borderColor: pink400,
   },
 };
 
@@ -33,6 +33,7 @@ class Note extends Component {
     this.onDeleteClick = props.onDeleteClick;
     this.onEditClick = this.onEditClick.bind(this);
     this.onChangeContent = this.onChangeContent.bind(this);
+    this.onChangeTitle = this.onChangeTitle.bind(this);
   }
 
   // onDrag() {
@@ -53,19 +54,25 @@ class Note extends Component {
     this.setState({ content: event.target.value });
   }
 
+  onChangeTitle(event) {
+    this.setState({ title: event.target.value });
+  }
+
   // edit function
   renderNote() {
     if (this.state.isEditing) {
       return (
         <div className="note">
           <div className="note-header">
-            <div className="title">{this.state.title}</div>
+            <MuiThemeProvider>
+              <TextField hintText="title" onChange={this.onChangeTitle} value={this.state.title} underlineStyle={style.underlineStyle} />
+            </MuiThemeProvider>
             <div> <FontAwesomeIcon icon={faTrash} onClick={() => this.onDeleteClick(this.state.id)} /> </div>
             <div> <FontAwesomeIcon icon={faEdit} onClick={() => this.onEditClick()} /> </div>
             <div className="handle" id="drag"> <FontAwesomeIcon icon={faArrows} onClick={() => this.onDrag()} /> </div>
           </div>
           <MuiThemeProvider>
-            <TextField hintText="Edit notes!" onChange={this.onChangeContent} value={this.state.content} underlineStyle={style.underlineStyle} multiLine />
+            <TextField hintText="note content" onChange={this.onChangeContent} value={this.state.content} underlineStyle={style.underlineStyle} multiLine />
           </MuiThemeProvider>
         </div>
       );
@@ -76,7 +83,7 @@ class Note extends Component {
             <div className="title">{this.state.title}</div>
             <div> <FontAwesomeIcon icon={faTrash} onClick={() => this.onDeleteClick(this.state.id)} /> </div>
             <div> <FontAwesomeIcon icon={faEdit} onClick={() => this.onEditClick()} /> </div>
-            <div className="handle" id="drag"> <FontAwesomeIcon icon={faArrows} onClick={() => this.onDrag()} /> </div>
+            <div className="handle" id="drag"> <FontAwesomeIcon icon={faArrows} /> </div>
           </div>
           <div className="noteBody content" dangerouslySetInnerHTML={{ __html: marked(this.state.content || '') }} />
         </div>

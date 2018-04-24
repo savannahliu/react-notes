@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import TextField from 'material-ui/TextField';
-import { lightBlue50 } from 'material-ui/styles/colors';
+import { pink400 } from 'material-ui/styles/colors';
 import NoteObject from '../NoteObject';
 
 const style = {
   marginRight: 20,
   underlineStyle: {
-    borderColor: lightBlue50,
+    borderColor: pink400,
   },
 };
 
