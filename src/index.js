@@ -22,11 +22,11 @@ import NoteObject from './NoteObject';
 class App extends Component {
   constructor(props) {
     super(props);
-    const newNote = new NoteObject(1, 'intro', 'hello', 10, 10, 1);
-    // const newNote2 = new NoteObject(2, 'intro2', 'hello2', 10, 10, 2);
+    const newNote = new NoteObject(1, 'intro', '![](http://i.giphy.com/gyRWkLSQVqlPi.gif)', 10, 10, 1);
+    const newNote2 = new NoteObject(2, 'intro2', '# large ', 10, 10, 2);
     this.state = {
-      notes: Immutable.Map([[1, newNote]]),
-      // notes: Immutable.Map([[1, newNote], [2, newNote2]]),
+      // notes: Immutable.Map([[1, newNote]]),
+      notes: Immutable.Map([[1, newNote], [2, newNote2]]),
       newTitle: 'intro',
     };
     // console.log('initial state');
